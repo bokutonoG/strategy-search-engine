@@ -15,16 +15,6 @@ public enum StrategyType {
     public String getDescription() {
         return this.description;
     }
-
-    public static StrategyType fromDescription(String description) {
-
-        for (StrategyType strategyType : values()) {
-            if (description.equalsIgnoreCase(strategyType.getDescription())) {
-                return strategyType;
-            }
-        }
-        throw new IllegalArgumentException("Нет стратегии с описанием: " + description);
-    }
 }
 
 
