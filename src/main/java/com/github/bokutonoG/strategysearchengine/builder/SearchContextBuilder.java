@@ -1,6 +1,7 @@
 package com.github.bokutonoG.strategysearchengine.builder;
 
 import com.github.bokutonoG.strategysearchengine.context.SearchContext;
+import com.github.bokutonoG.strategysearchengine.exceptions.StrategyNotFoundException;
 import com.github.bokutonoG.strategysearchengine.model.FindCriteria;
 import com.github.bokutonoG.strategysearchengine.enums.StrategyType;
 import com.github.bokutonoG.strategysearchengine.model.Order;
@@ -39,7 +40,7 @@ public class SearchContextBuilder {
         FindCriteria findCriteria = new FindCriteria();
         for (StrategyType strategyType : strategiesTypes) {
             if(!strategyTypeMap.containsKey(strategyType) && !findCriteriaTypeMap.containsKey(strategyType)) {
-                throw new IllegalArgumentException("Передан некорректный тип стратегии" + strategyType);
+                throw new StrategyNotFoundException("Передан некорректный тип стратегии" + strategyType);
             }
             strategiesList.add(strategyTypeMap.get(strategyType).get());
             findCriteriaTypeMap.get(strategyType).accept(scanner, findCriteria);

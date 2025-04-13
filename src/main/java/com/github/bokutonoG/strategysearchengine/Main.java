@@ -4,6 +4,7 @@ import com.github.bokutonoG.strategysearchengine.enums.StrategyType;
 import com.github.bokutonoG.strategysearchengine.model.Order;
 import com.github.bokutonoG.strategysearchengine.builder.SearchContextBuilder;
 import com.github.bokutonoG.strategysearchengine.service.StrategyService;
+import com.github.bokutonoG.strategysearchengine.utils.StrategyTypeParser;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -28,7 +29,7 @@ public class Main {
         String[] inputs = scanner.nextLine().split(",");
         List<StrategyType> strategyTypes = new ArrayList<>();
         for (String strategy : inputs) {
-            strategyTypes.add(StrategyType.fromDescription(strategy.trim()));
+            strategyTypes.add(StrategyTypeParser.fromDescription(strategy.trim()));
         }
         // создание билдера стратегий
         SearchContextBuilder searchContextBuilder = new SearchContextBuilder();
