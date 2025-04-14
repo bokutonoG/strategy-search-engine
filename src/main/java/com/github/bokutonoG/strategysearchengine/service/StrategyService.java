@@ -21,7 +21,7 @@ public class StrategyService {
     public List<Order> findByStrategy(List<Order> orders) {
         List<Order> result = orders;
         for (Findable<Order> strategy : searchContext.getStrategies()) {
-            result = strategy.find(orders, searchContext.getFindCriteria());
+            result = strategy.find(result, searchContext.getFindCriteria());
         }
         return result;
     }
