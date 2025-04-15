@@ -17,7 +17,6 @@ public class SearchContextBuilder {
 
 
     public SearchContextBuilder() {
-        // ленивая инициализация мап?
         this.strategyTypeMap = new HashMap<>();
         this.strategyTypeMap.put(StrategyType.BY_CLIENT_NAME, FindByClientNameStrategy::new);
         this.strategyTypeMap.put(StrategyType.BY_CREATED_AT, FindByCreatedAtStrategy::new);

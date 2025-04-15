@@ -1,16 +1,10 @@
 package com.github.bokutonoG.strategysearchengine;
-
 import com.github.bokutonoG.strategysearchengine.enums.StrategyType;
 import com.github.bokutonoG.strategysearchengine.model.FindCriteria;
 import com.github.bokutonoG.strategysearchengine.model.Order;
 import com.github.bokutonoG.strategysearchengine.builder.SearchContextBuilder;
 import com.github.bokutonoG.strategysearchengine.service.StrategyService;
 import com.github.bokutonoG.strategysearchengine.utils.CLIUtil;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -31,12 +25,5 @@ public class Main {
         var foundOrders = strategyService.findByStrategy(orders);
         // вывод с помощью утилиты
         CLIUtil.resultPrinter(foundOrders);
-
-
-
-
-
-
-
     }
 }
